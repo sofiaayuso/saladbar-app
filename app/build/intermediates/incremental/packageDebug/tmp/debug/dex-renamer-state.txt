@@ -1,0 +1,4 @@
+#Sun Aug 29 17:51:13 CDT 2021
+base.0=/Users/sofiaayusom/AndroidStudioProjects/MyPizzaApp/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

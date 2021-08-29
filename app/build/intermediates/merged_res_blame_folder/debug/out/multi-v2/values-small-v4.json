@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/sofiaayusom/AndroidStudioProjects/MyPizzaApp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-small-v4/values-small-v4.xml",
+            "map": [
+                {
+                    "source": "/Users/sofiaayusom/.gradle/caches/transforms-3/abeb6860774985a4516354d0fbbe629c/transformed/material-1.3.0/res/values-small-v4/values-small-v4.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,128,198,270",
+                        "endColumns": "72,69,71,69",
+                        "endOffsets": "123,193,265,335"
+                    }
+                }
+            ]
+        }
+    ]
+}

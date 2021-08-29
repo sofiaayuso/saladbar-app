@@ -1,0 +1,2235 @@
+Index: gradle.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/gradle.properties b/gradle.properties
+new file mode 100644
+--- /dev/null	(date 1617047298129)
++++ b/gradle.properties	(date 1617047298129)
+@@ -0,0 +1,19 @@
++# Project-wide Gradle settings.
++# IDE (e.g. Android Studio) users:
++# Gradle settings configured through the IDE *will override*
++# any settings specified in this file.
++# For more details on how to configure your build environment visit
++# http://www.gradle.org/docs/current/userguide/build_environment.html
++# Specifies the JVM arguments used for the daemon process.
++# The setting is particularly useful for tweaking memory settings.
++org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8
++# When configured, Gradle will run in incubating parallel mode.
++# This option should only be used with decoupled projects. More details, visit
++# http://www.gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects
++# org.gradle.parallel=true
++# AndroidX package structure to make it clearer which packages are bundled with the
++# Android operating system, and which are packaged with your app"s APK
++# https://developer.android.com/topic/libraries/support-library/androidx-rn
++android.useAndroidX=true
++# Kotlin code style for this project: "official" or "obsolete":
++kotlin.code.style=official
+\ No newline at end of file
+Index: app/src/main/res/values-night/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-night/themes.xml b/app/src/main/res/values-night/themes.xml
+new file mode 100644
+--- /dev/null	(date 1617047302675)
++++ b/app/src/main/res/values-night/themes.xml	(date 1617047302675)
+@@ -0,0 +1,16 @@
++<resources xmlns:tools="http://schemas.android.com/tools">
++    <!-- Base application theme. -->
++    <style name="Theme.MyPizzaApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
++        <!-- Primary brand color. -->
++        <item name="colorPrimary">@color/purple_200</item>
++        <item name="colorPrimaryVariant">@color/purple_700</item>
++        <item name="colorOnPrimary">@color/black</item>
++        <!-- Secondary brand color. -->
++        <item name="colorSecondary">@color/teal_200</item>
++        <item name="colorSecondaryVariant">@color/teal_200</item>
++        <item name="colorOnSecondary">@color/black</item>
++        <!-- Status bar color. -->
++        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
++        <!-- Customize your theme here. -->
++    </style>
++</resources>
+\ No newline at end of file
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle b/build.gradle
+new file mode 100644
+--- /dev/null	(date 1629660961077)
++++ b/build.gradle	(date 1629660961077)
+@@ -0,0 +1,27 @@
++// Top-level build file where you can add configuration options common to all sub-projects/modules.
++buildscript {
++    ext.kotlin_version = "1.4.31"
++    repositories {
++        google()
++        mavenCentral()
++    }
++    dependencies {
++        classpath 'com.android.tools.build:gradle:7.0.1'
++        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
++        classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
++
++        // NOTE: Do not place your application dependencies here; they belong
++        // in the individual module build.gradle files
++    }
++}
++
++allprojects {
++    repositories {
++        google()
++        jcenter()
++    }
++}
++
++task clean(type: Delete) {
++    delete rootProject.buildDir
++}
+\ No newline at end of file
+Index: app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml b/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+new file mode 100644
+--- /dev/null	(date 1617047302416)
++++ b/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml	(date 1617047302416)
+@@ -0,0 +1,5 @@
++<?xml version="1.0" encoding="utf-8"?>
++<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
++    <background android:drawable="@drawable/ic_launcher_background" />
++    <foreground android:drawable="@drawable/ic_launcher_foreground" />
++</adaptive-icon>
+\ No newline at end of file
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+new file mode 100644
+--- /dev/null	(date 1617544742105)
++++ b/app/src/main/res/values/strings.xml	(date 1617544742105)
+@@ -0,0 +1,6 @@
++<resources>
++    <string name="app_name">My Pizza App</string>
++    <string name="welcome_message">Welcome to The Salad Bar!</string>
++    <string name="signin_button">Sign In</string>
++    <string name="guest_button">Continue as Guest</string>
++</resources>
+\ No newline at end of file
+Index: app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml b/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+new file mode 100644
+--- /dev/null	(date 1617047301297)
++++ b/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml	(date 1617047301297)
+@@ -0,0 +1,5 @@
++<?xml version="1.0" encoding="utf-8"?>
++<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
++    <background android:drawable="@drawable/ic_launcher_background" />
++    <foreground android:drawable="@drawable/ic_launcher_foreground" />
++</adaptive-icon>
+\ No newline at end of file
+Index: app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/colors.xml b/app/src/main/res/values/colors.xml
+new file mode 100644
+--- /dev/null	(date 1617047302639)
++++ b/app/src/main/res/values/colors.xml	(date 1617047302639)
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <color name="purple_200">#FFBB86FC</color>
++    <color name="purple_500">#FF6200EE</color>
++    <color name="purple_700">#FF3700B3</color>
++    <color name="teal_200">#FF03DAC5</color>
++    <color name="teal_700">#FF018786</color>
++    <color name="black">#FF000000</color>
++    <color name="white">#FFFFFFFF</color>
++</resources>
+\ No newline at end of file
+Index: app/src/test/java/com/example/mypizzaapp/ExampleUnitTest.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/test/java/com/example/mypizzaapp/ExampleUnitTest.kt b/app/src/test/java/com/example/mypizzaapp/ExampleUnitTest.kt
+new file mode 100644
+--- /dev/null	(date 1617047301275)
++++ b/app/src/test/java/com/example/mypizzaapp/ExampleUnitTest.kt	(date 1617047301275)
+@@ -0,0 +1,17 @@
++package com.example.mypizzaapp
++
++import org.junit.Test
++
++import org.junit.Assert.*
++
++/**
++ * Example local unit test, which will execute on the development machine (host).
++ *
++ * See [testing documentation](http://d.android.com/tools/testing).
++ */
++class ExampleUnitTest {
++    @Test
++    fun addition_isCorrect() {
++        assertEquals(4, 2 + 2)
++    }
++}
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1630277508361)
++++ b/.idea/vcs.xml	(date 1630277508361)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/androidTest/java/com/example/mypizzaapp/ExampleInstrumentedTest.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/androidTest/java/com/example/mypizzaapp/ExampleInstrumentedTest.kt b/app/src/androidTest/java/com/example/mypizzaapp/ExampleInstrumentedTest.kt
+new file mode 100644
+--- /dev/null	(date 1617047301101)
++++ b/app/src/androidTest/java/com/example/mypizzaapp/ExampleInstrumentedTest.kt	(date 1617047301101)
+@@ -0,0 +1,24 @@
++package com.example.mypizzaapp
++
++import androidx.test.platform.app.InstrumentationRegistry
++import androidx.test.ext.junit.runners.AndroidJUnit4
++
++import org.junit.Test
++import org.junit.runner.RunWith
++
++import org.junit.Assert.*
++
++/**
++ * Instrumented test, which will execute on an Android device.
++ *
++ * See [testing documentation](http://d.android.com/tools/testing).
++ */
++@RunWith(AndroidJUnit4::class)
++class ExampleInstrumentedTest {
++    @Test
++    fun useAppContext() {
++        // Context of the app under test.
++        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
++        assertEquals("com.example.mypizzaapp", appContext.packageName)
++    }
++}
+\ No newline at end of file
+Index: gradlew
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/gradlew b/gradlew
+new file mode 100755
+--- /dev/null	(date 1617047296882)
++++ b/gradlew	(date 1617047296882)
+@@ -0,0 +1,172 @@
++#!/usr/bin/env sh
++
++##############################################################################
++##
++##  Gradle start up script for UN*X
++##
++##############################################################################
++
++# Attempt to set APP_HOME
++# Resolve links: $0 may be a link
++PRG="$0"
++# Need this for relative symlinks.
++while [ -h "$PRG" ] ; do
++    ls=`ls -ld "$PRG"`
++    link=`expr "$ls" : '.*-> \(.*\)$'`
++    if expr "$link" : '/.*' > /dev/null; then
++        PRG="$link"
++    else
++        PRG=`dirname "$PRG"`"/$link"
++    fi
++done
++SAVED="`pwd`"
++cd "`dirname \"$PRG\"`/" >/dev/null
++APP_HOME="`pwd -P`"
++cd "$SAVED" >/dev/null
++
++APP_NAME="Gradle"
++APP_BASE_NAME=`basename "$0"`
++
++# Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
++DEFAULT_JVM_OPTS=""
++
++# Use the maximum available, or set MAX_FD != -1 to use that value.
++MAX_FD="maximum"
++
++warn () {
++    echo "$*"
++}
++
++die () {
++    echo
++    echo "$*"
++    echo
++    exit 1
++}
++
++# OS specific support (must be 'true' or 'false').
++cygwin=false
++msys=false
++darwin=false
++nonstop=false
++case "`uname`" in
++  CYGWIN* )
++    cygwin=true
++    ;;
++  Darwin* )
++    darwin=true
++    ;;
++  MINGW* )
++    msys=true
++    ;;
++  NONSTOP* )
++    nonstop=true
++    ;;
++esac
++
++CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
++
++# Determine the Java command to use to start the JVM.
++if [ -n "$JAVA_HOME" ] ; then
++    if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
++        # IBM's JDK on AIX uses strange locations for the executables
++        JAVACMD="$JAVA_HOME/jre/sh/java"
++    else
++        JAVACMD="$JAVA_HOME/bin/java"
++    fi
++    if [ ! -x "$JAVACMD" ] ; then
++        die "ERROR: JAVA_HOME is set to an invalid directory: $JAVA_HOME
++
++Please set the JAVA_HOME variable in your environment to match the
++location of your Java installation."
++    fi
++else
++    JAVACMD="java"
++    which java >/dev/null 2>&1 || die "ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
++
++Please set the JAVA_HOME variable in your environment to match the
++location of your Java installation."
++fi
++
++# Increase the maximum file descriptors if we can.
++if [ "$cygwin" = "false" -a "$darwin" = "false" -a "$nonstop" = "false" ] ; then
++    MAX_FD_LIMIT=`ulimit -H -n`
++    if [ $? -eq 0 ] ; then
++        if [ "$MAX_FD" = "maximum" -o "$MAX_FD" = "max" ] ; then
++            MAX_FD="$MAX_FD_LIMIT"
++        fi
++        ulimit -n $MAX_FD
++        if [ $? -ne 0 ] ; then
++            warn "Could not set maximum file descriptor limit: $MAX_FD"
++        fi
++    else
++        warn "Could not query maximum file descriptor limit: $MAX_FD_LIMIT"
++    fi
++fi
++
++# For Darwin, add options to specify how the application appears in the dock
++if $darwin; then
++    GRADLE_OPTS="$GRADLE_OPTS \"-Xdock:name=$APP_NAME\" \"-Xdock:icon=$APP_HOME/media/gradle.icns\""
++fi
++
++# For Cygwin, switch paths to Windows format before running java
++if $cygwin ; then
++    APP_HOME=`cygpath --path --mixed "$APP_HOME"`
++    CLASSPATH=`cygpath --path --mixed "$CLASSPATH"`
++    JAVACMD=`cygpath --unix "$JAVACMD"`
++
++    # We build the pattern for arguments to be converted via cygpath
++    ROOTDIRSRAW=`find -L / -maxdepth 1 -mindepth 1 -type d 2>/dev/null`
++    SEP=""
++    for dir in $ROOTDIRSRAW ; do
++        ROOTDIRS="$ROOTDIRS$SEP$dir"
++        SEP="|"
++    done
++    OURCYGPATTERN="(^($ROOTDIRS))"
++    # Add a user-defined pattern to the cygpath arguments
++    if [ "$GRADLE_CYGPATTERN" != "" ] ; then
++        OURCYGPATTERN="$OURCYGPATTERN|($GRADLE_CYGPATTERN)"
++    fi
++    # Now convert the arguments - kludge to limit ourselves to /bin/sh
++    i=0
++    for arg in "$@" ; do
++        CHECK=`echo "$arg"|egrep -c "$OURCYGPATTERN" -`
++        CHECK2=`echo "$arg"|egrep -c "^-"`                                 ### Determine if an option
++
++        if [ $CHECK -ne 0 ] && [ $CHECK2 -eq 0 ] ; then                    ### Added a condition
++            eval `echo args$i`=`cygpath --path --ignore --mixed "$arg"`
++        else
++            eval `echo args$i`="\"$arg\""
++        fi
++        i=$((i+1))
++    done
++    case $i in
++        (0) set -- ;;
++        (1) set -- "$args0" ;;
++        (2) set -- "$args0" "$args1" ;;
++        (3) set -- "$args0" "$args1" "$args2" ;;
++        (4) set -- "$args0" "$args1" "$args2" "$args3" ;;
++        (5) set -- "$args0" "$args1" "$args2" "$args3" "$args4" ;;
++        (6) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" ;;
++        (7) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" ;;
++        (8) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" "$args7" ;;
++        (9) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" "$args7" "$args8" ;;
++    esac
++fi
++
++# Escape application args
++save () {
++    for i do printf %s\\n "$i" | sed "s/'/'\\\\''/g;1s/^/'/;\$s/\$/' \\\\/" ; done
++    echo " "
++}
++APP_ARGS=$(save "$@")
++
++# Collect all arguments for the java command, following the shell quoting and substitution rules
++eval set -- $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS "\"-Dorg.gradle.appname=$APP_BASE_NAME\"" -classpath "\"$CLASSPATH\"" org.gradle.wrapper.GradleWrapperMain "$APP_ARGS"
++
++# by default we should be in the correct project dir, but when run from Finder on Mac, the cwd is wrong
++if [ "$(uname)" = "Darwin" ] && [ "$HOME" = "$PWD" ]; then
++  cd "$(dirname "$0")"
++fi
++
++exec "$JAVACMD" "$@"
+Index: gradlew.bat
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/gradlew.bat b/gradlew.bat
+new file mode 100644
+--- /dev/null	(date 1617047296902)
++++ b/gradlew.bat	(date 1617047296902)
+@@ -0,0 +1,84 @@
++@if "%DEBUG%" == "" @echo off
++@rem ##########################################################################
++@rem
++@rem  Gradle startup script for Windows
++@rem
++@rem ##########################################################################
++
++@rem Set local scope for the variables with windows NT shell
++if "%OS%"=="Windows_NT" setlocal
++
++set DIRNAME=%~dp0
++if "%DIRNAME%" == "" set DIRNAME=.
++set APP_BASE_NAME=%~n0
++set APP_HOME=%DIRNAME%
++
++@rem Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
++set DEFAULT_JVM_OPTS=
++
++@rem Find java.exe
++if defined JAVA_HOME goto findJavaFromJavaHome
++
++set JAVA_EXE=java.exe
++%JAVA_EXE% -version >NUL 2>&1
++if "%ERRORLEVEL%" == "0" goto init
++
++echo.
++echo ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
++echo.
++echo Please set the JAVA_HOME variable in your environment to match the
++echo location of your Java installation.
++
++goto fail
++
++:findJavaFromJavaHome
++set JAVA_HOME=%JAVA_HOME:"=%
++set JAVA_EXE=%JAVA_HOME%/bin/java.exe
++
++if exist "%JAVA_EXE%" goto init
++
++echo.
++echo ERROR: JAVA_HOME is set to an invalid directory: %JAVA_HOME%
++echo.
++echo Please set the JAVA_HOME variable in your environment to match the
++echo location of your Java installation.
++
++goto fail
++
++:init
++@rem Get command-line arguments, handling Windows variants
++
++if not "%OS%" == "Windows_NT" goto win9xME_args
++
++:win9xME_args
++@rem Slurp the command line arguments.
++set CMD_LINE_ARGS=
++set _SKIP=2
++
++:win9xME_args_slurp
++if "x%~1" == "x" goto execute
++
++set CMD_LINE_ARGS=%*
++
++:execute
++@rem Setup the command line
++
++set CLASSPATH=%APP_HOME%\gradle\wrapper\gradle-wrapper.jar
++
++@rem Execute Gradle
++"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %GRADLE_OPTS% "-Dorg.gradle.appname=%APP_BASE_NAME%" -classpath "%CLASSPATH%" org.gradle.wrapper.GradleWrapperMain %CMD_LINE_ARGS%
++
++:end
++@rem End local scope for the variables with windows NT shell
++if "%ERRORLEVEL%"=="0" goto mainEnd
++
++:fail
++rem Set variable GRADLE_EXIT_CONSOLE if you need the _script_ return code instead of
++rem the _cmd.exe /c_ return code!
++if  not "" == "%GRADLE_EXIT_CONSOLE%" exit 1
++exit /b 1
++
++:mainEnd
++if "%OS%"=="Windows_NT" endlocal
++
++:omega
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+--- /dev/null	(date 1617047296812)
++++ b/.gitignore	(date 1617047296812)
+@@ -0,0 +1,15 @@
++*.iml
++.gradle
++/local.properties
++/.idea/caches
++/.idea/libraries
++/.idea/modules.xml
++/.idea/workspace.xml
++/.idea/navEditor.xml
++/.idea/assetWizardSettings.xml
++.DS_Store
++/build
++/captures
++.externalNativeBuild
++.cxx
++local.properties
+Index: app/src/main/res/layout/activity_customerlist.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_customerlist.xml b/app/src/main/res/layout/activity_customerlist.xml
+new file mode 100644
+--- /dev/null	(date 1620825533977)
++++ b/app/src/main/res/layout/activity_customerlist.xml	(date 1620825533977)
+@@ -0,0 +1,16 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent">
++
++    <ListView
++        android:id="@+id/lv_customerlist"
++        android:layout_width="410dp"
++        android:layout_height="match_parent"
++        android:layout_alignParentStart="true"
++        android:layout_alignParentTop="true"
++        android:layout_alignParentEnd="true"
++        android:layout_marginStart="1dp"
++        android:layout_marginTop="0dp"
++        android:layout_marginEnd="0dp" />
++</RelativeLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/mypizzaapp/CustomerListActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/mypizzaapp/CustomerListActivity.kt b/app/src/main/java/com/example/mypizzaapp/CustomerListActivity.kt
+new file mode 100644
+--- /dev/null	(date 1620940933352)
++++ b/app/src/main/java/com/example/mypizzaapp/CustomerListActivity.kt	(date 1620940933352)
+@@ -0,0 +1,26 @@
++package com.example.mypizzaapp
++
++import android.os.Bundle
++import android.widget.ArrayAdapter
++import android.widget.ListView
++import androidx.appcompat.app.AppCompatActivity
++
++class CustomerListActivity: AppCompatActivity() {
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        setContentView(R.layout.activity_customerlist)
++
++        var lv_customerList = findViewById<ListView>(R.id.lv_customerlist)
++
++        val databaseHelper = DatabaseHelper(this)
++        val everyOrder : List<Customer> = databaseHelper.getAllCustomers()
++
++        val customerArrayAdapter = ArrayAdapter<Customer>(this, android.R.layout.simple_list_item_1, everyOrder)
++
++//        lv_customerList.adapter(customerArrayAdapter)
++
++
++
++
++}
++}
+\ No newline at end of file
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+new file mode 100644
+--- /dev/null	(date 1620937619817)
++++ b/app/src/main/AndroidManifest.xml	(date 1620937619817)
+@@ -0,0 +1,42 @@
++<?xml version="1.0" encoding="utf-8"?>
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    package="com.example.mypizzaapp">
++
++    <application
++        android:allowBackup="true"
++        android:icon="@mipmap/ic_launcher"
++        android:label="@string/app_name"
++        android:roundIcon="@mipmap/ic_launcher_round"
++        android:supportsRtl="true"
++        android:theme="@style/Theme.MyPizzaApp">
++        <activity
++            android:name=".WelcomeActivity"
++            android:label="The Salad Bar">
++            <intent-filter>
++                <action android:name="android.intent.action.MAIN" />
++
++                <category android:name="android.intent.category.LAUNCHER" />
++            </intent-filter></activity>
++        <activity
++            android:name=".MenuActivity"
++            android:label="Menu"
++            android:parentActivityName=".WelcomeActivity">
++            <!-- Meta-data required if supporting API level 15 and lower -->
++            <meta-data
++                android:name="android.support.PARENT_ACTIVITY"
++                android:value=".MenuActivity" />
++        </activity>
++        <activity
++            android:name=".CartActivity"
++            android:label="My Cart">
++        </activity>
++        <activity
++            android:name=".CustomerListActivity"
++            android:label="Recent Orders"
++            android:parentActivityName=".WelcomeActivity">
++        </activity>
++
++
++    </application>
++
++</manifest>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_welcome.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_welcome.xml b/app/src/main/res/layout/activity_welcome.xml
+new file mode 100644
+--- /dev/null	(date 1620935947829)
++++ b/app/src/main/res/layout/activity_welcome.xml	(date 1620935947829)
+@@ -0,0 +1,103 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="#E69F70"
++    tools:context=".WelcomeActivity"
++    android:clickable="true"
++    android:focusable="true"
++    android:focusableInTouchMode="true" >
++
++    <TextView
++        android:id="@+id/textView2"
++        android:layout_width="348dp"
++        android:layout_height="120dp"
++        android:layout_alignParentTop="true"
++        android:layout_alignParentEnd="true"
++        android:layout_centerHorizontal="true"
++        android:layout_marginTop="68dp"
++        android:layout_marginEnd="32dp"
++        android:fontFamily="cursive"
++        android:text="@string/welcome_message"
++        android:textAppearance="@style/TextAppearance.AppCompat.Large"
++        android:textColor="@color/white"
++        android:textSize="48sp"
++        android:textStyle="bold" />
++
++    <Button
++        android:id="@+id/guest_button"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_alignStart="@+id/view_all"
++        android:layout_alignEnd="@+id/view_all"
++        android:layout_alignParentBottom="true"
++        android:layout_marginStart="12dp"
++        android:layout_marginEnd="11dp"
++        android:layout_marginBottom="175dp"
++        android:text="@string/guest_button"
++        android:textColor="@color/black"
++        app:backgroundTint="#FFFFFF" />
++
++    <Button
++        android:id="@+id/signin_button"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_alignParentBottom="true"
++        android:layout_centerHorizontal="true"
++        android:layout_marginBottom="234dp"
++        android:insetRight="0dp"
++        android:text="@string/signin_button"
++        android:textColor="@color/black"
++        android:visibility="visible"
++        app:backgroundTint="@color/white"
++        tools:visibility="visible" />
++
++    <EditText
++        android:id="@+id/editTextEmailAddress"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_alignParentStart="true"
++        android:layout_alignParentBottom="true"
++        android:layout_centerHorizontal="true"
++        android:layout_marginStart="81dp"
++        android:layout_marginBottom="420dp"
++        android:autofillHints="autofill Hints"
++        android:ems="10"
++        android:hint="Email address"
++        android:inputType="textEmailAddress"
++        android:selectAllOnFocus="true"
++        tools:layout_editor_absoluteX="91dp"
++        />
++
++    <EditText
++        android:id="@+id/editTextTextPassword"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_alignParentStart="true"
++        android:layout_centerInParent="true"
++        android:layout_marginStart="81dp"
++        android:layout_marginBottom="16dp"
++        android:ems="10"
++        android:hint="Password"
++        android:inputType="textPassword"
++        tools:layout_editor_absoluteX="91dp"
++        android:clickable="true"
++        android:focusable="true"
++        android:focusableInTouchMode="true" />
++
++    <Button
++        android:id="@+id/view_all"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_alignParentBottom="true"
++        android:layout_centerHorizontal="true"
++        android:layout_marginBottom="59dp"
++        android:text="View All Past Orders"
++        android:textColor="@color/black"
++        app:backgroundTint="@color/white" />
++
++
++</RelativeLayout>
+\ No newline at end of file
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+new file mode 100644
+--- /dev/null	(date 1620940985702)
++++ b/app/build.gradle	(date 1620940985702)
+@@ -0,0 +1,46 @@
++plugins {
++    id 'com.android.application'
++    id 'kotlin-android'
++    id 'kotlin-android-extensions'
++}
++
++android {
++    compileSdkVersion 30
++    buildToolsVersion "30.0.3"
++
++    defaultConfig {
++        applicationId "com.example.mypizzaapp"
++        minSdkVersion 19
++        targetSdkVersion 30
++        versionCode 1
++        versionName "1.0"
++
++        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
++    }
++
++    buildTypes {
++        release {
++            minifyEnabled false
++            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
++        }
++    }
++    compileOptions {
++        sourceCompatibility JavaVersion.VERSION_1_8
++        targetCompatibility JavaVersion.VERSION_1_8
++    }
++    kotlinOptions {
++        jvmTarget = '1.8'
++    }
++}
++
++dependencies {
++
++    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
++    implementation 'androidx.core:core-ktx:1.3.2'
++    implementation 'androidx.appcompat:appcompat:1.2.0'
++    implementation 'com.google.android.material:material:1.3.0'
++    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
++    testImplementation 'junit:junit:4.+'
++    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
++    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_cart.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_cart.xml b/app/src/main/res/layout/activity_cart.xml
+new file mode 100644
+--- /dev/null	(date 1620156914175)
++++ b/app/src/main/res/layout/activity_cart.xml	(date 1620156914175)
+@@ -0,0 +1,52 @@
++<?xml version="1.0" encoding="utf-8"?>
++    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++        xmlns:app="http://schemas.android.com/apk/res-auto"
++        xmlns:tools="http://schemas.android.com/tools"
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:background="#E69F70"
++        tools:context=".CartActivity">
++
++
++    <TextView
++        android:id="@+id/thanks"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:fontFamily="cursive"
++        android:text="My Cart"
++        android:textAppearance="@style/TextAppearance.AppCompat.Large"
++        android:textColor="@color/white"
++        android:textSize="35dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.274" />
++
++    <TextView
++        android:id="@+id/totalCostText"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="Your total is:"
++        android:textColor="@color/white"
++        android:textSize="20dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.303"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/thanks"
++        app:layout_constraintVertical_bias="0.312" />
++
++    <EditText
++        android:id="@+id/costField"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="32dp"
++        android:layout_marginTop="128dp"
++        android:textColor="@color/white"
++        android:inputType="numberDecimal"
++        app:layout_constraintStart_toEndOf="@+id/totalCostText"
++        app:layout_constraintTop_toBottomOf="@+id/thanks" />
++
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_menu.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_menu.xml b/app/src/main/res/layout/activity_menu.xml
+new file mode 100644
+--- /dev/null	(date 1621021111123)
++++ b/app/src/main/res/layout/activity_menu.xml	(date 1621021111123)
+@@ -0,0 +1,306 @@
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="#E69F70"
++    tools:context=".MenuActivity">
++
++
++    <ScrollView
++        android:layout_width="308dp"
++        android:layout_height="547dp"
++        android:layout_alignParentStart="true"
++        android:layout_alignParentTop="true"
++        android:layout_alignParentEnd="true"
++        android:layout_alignParentBottom="true"
++        android:layout_centerVertical="true">
++
++
++        <LinearLayout
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:layout_marginLeft="10dp"
++            android:orientation="vertical">
++
++<!--            <TextView-->
++<!--                android:id="@+id/textView1"-->
++<!--                android:layout_width="wrap_content"-->
++<!--                android:layout_height="60dp"-->
++<!--                android:layout_alignParentTop="true"-->
++<!--                android:layout_alignParentEnd="true"-->
++<!--                android:layout_alignParentBottom="true"-->
++<!--                android:layout_centerHorizontal="true"-->
++<!--                android:layout_marginTop="30dp"-->
++<!--                android:fontFamily="cursive"-->
++<!--                android:text="Salad includes base"-->
++<!--                android:textAlignment="center"-->
++<!--                android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
++<!--                android:textColor="@color/white"-->
++<!--                android:textSize="34sp"-->
++<!--                android:textStyle="bold" />-->
++
++            <TextView
++                android:id="@+id/textView2"
++                android:layout_width="wrap_content"
++                android:layout_height="60dp"
++                android:layout_alignParentTop="true"
++                android:layout_alignParentEnd="true"
++                android:layout_alignParentBottom="true"
++                android:layout_centerHorizontal="true"
++                android:layout_marginTop="10dp"
++                android:fontFamily="cursive"
++                android:text="Choose a base"
++                android:textAlignment="center"
++                android:textAppearance="@style/TextAppearance.AppCompat.Large"
++                android:textColor="@color/white"
++                android:textSize="34sp"
++                android:textStyle="bold" />
++
++            <RadioGroup
++                android:id="@+id/base_menu"
++                android:layout_width="match_parent"
++                android:layout_height="match_parent">
++
++                <RadioButton
++                    android:id="@+id/base1"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:text="Romaine" />
++
++                <RadioButton
++                    android:id="@+id/base2"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:text="Spinach" />
++
++                <RadioButton
++                    android:id="@+id/base3"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:text="Kale" />
++
++                <RadioButton
++                    android:id="@+id/base4"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:text="Arugula" />
++            </RadioGroup>
++
++
++            <TextView
++                android:id="@+id/textView3"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_centerHorizontal="true"
++                android:layout_centerVertical="true"
++                android:fontFamily="cursive"
++                android:text="Choose a protein"
++                android:textAlignment="center"
++                android:textAppearance="@style/TextAppearance.AppCompat.Large"
++                android:textColor="@color/white"
++                android:textSize="34sp"
++                android:textStyle="bold" />
++
++            <RadioGroup
++                android:id="@+id/protein_menu"
++                android:layout_width="match_parent"
++                android:layout_height="match_parent">
++
++                <RadioButton
++                    android:id="@+id/protein1"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:text="Chicken" />
++
++                <RadioButton
++                    android:id="@+id/protein2"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:text="Steak" />
++
++                <RadioButton
++                    android:id="@+id/protein3"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:text="Tuna" />
++
++                <RadioButton
++                    android:id="@+id/protein4"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:text="Tofu" />
++            </RadioGroup>
++
++            <TextView
++                android:id="@+id/textView4"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_centerHorizontal="true"
++                android:layout_centerVertical="true"
++                android:fontFamily="cursive"
++                android:text="Choose your ingredients"
++                android:textAlignment="center"
++                android:textAppearance="@style/TextAppearance.AppCompat.Large"
++                android:textColor="@color/white"
++                android:textSize="34sp"
++                android:textStyle="bold" />
++
++        <LinearLayout
++            android:id="@+id/ingredients"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:orientation="vertical">
++
++            <CheckBox
++                android:id="@+id/ingredient1"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:text="Black beans" />
++
++            <CheckBox
++                android:id="@+id/ingredient2"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:text="Carrots (shredded)" />
++
++            <CheckBox
++                android:id="@+id/ingredient3"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:text="Corn (roasted)" />
++
++            <CheckBox
++                android:id="@+id/ingredient4"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:text="Cucumber" />
++
++            <CheckBox
++                android:id="@+id/ingredient5"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:text="Mushrooms" />
++
++            <CheckBox
++                android:id="@+id/ingredient6"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:text="Olives" />
++
++            <CheckBox
++                android:id="@+id/ingredient7"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:text="Onion (diced)" />
++
++            <CheckBox
++                android:id="@+id/ingredient8"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:text="Peppers" />
++
++            <CheckBox
++                android:id="@+id/ingredient9"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:text="Raddish" />
++
++            <CheckBox
++                android:id="@+id/ingredient10"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:text="Tomatoes" />
++
++        </LinearLayout>
++
++
++            <TextView
++                android:id="@+id/textView5"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_centerHorizontal="true"
++                android:layout_centerVertical="true"
++                android:fontFamily="cursive"
++                android:text="Add your extras (0.25 each)"
++                android:textAlignment="center"
++                android:textAppearance="@style/TextAppearance.AppCompat.Large"
++                android:textColor="@color/white"
++                android:textSize="34sp"
++                android:textStyle="bold" />
++
++        <LinearLayout
++            android:id="@+id/extras"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:orientation="vertical">
++
++                <CheckBox
++                    android:id="@+id/extra1"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:text="Avocado" />
++
++                <CheckBox
++                    android:id="@+id/extra2"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:text="Bacon" />
++
++                <CheckBox
++                    android:id="@+id/extra3"
++                    android:layout_width="match_parent"
++                    android:layout_height="wrap_content"
++                    android:text="Cheddar cheese" />
++
++            <CheckBox
++                android:id="@+id/extra4"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:text="Cranberries" />
++
++            <CheckBox
++                android:id="@+id/extra5"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:text="Croutons" />
++
++            <CheckBox
++                android:id="@+id/extra6"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:text="Feta cheese" />
++
++            <CheckBox
++                android:id="@+id/extra7"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:text="Parmesan cheese" />
++
++            <CheckBox
++                android:id="@+id/extra8"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:text="Sunflower seeds" />
++
++            </LinearLayout>
++
++
++            <Button
++                android:id="@+id/next_button"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_centerHorizontal="true"
++                android:text="Next"
++                android:textColor="@color/black"
++                android:layout_marginBottom="10dp"
++                android:layout_marginStart="150dp"
++                app:backgroundTint="#FFFFFF" />
++
++        </LinearLayout>
++
++    </ScrollView>
++
++
++</RelativeLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/mypizzaapp/WelcomeActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/mypizzaapp/WelcomeActivity.kt b/app/src/main/java/com/example/mypizzaapp/WelcomeActivity.kt
+new file mode 100644
+--- /dev/null	(date 1621025735448)
++++ b/app/src/main/java/com/example/mypizzaapp/WelcomeActivity.kt	(date 1621025735448)
+@@ -0,0 +1,134 @@
++package com.example.mypizzaapp
++
++import android.content.Intent
++import androidx.appcompat.app.AppCompatActivity
++import android.os.Bundle
++import android.os.Parcelable
++import android.widget.Button
++import android.widget.TextView
++import android.widget.Toast
++import java.io.Serializable
++import java.lang.Exception
++
++class WelcomeActivity : AppCompatActivity() {
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        setContentView(R.layout.activity_welcome)
++
++        // storing ID of the button in a variable
++        val signinButton = findViewById<Button>(R.id.signin_button)
++        val guestButton = findViewById<Button>(R.id.guest_button)
++        val viewAllButton = findViewById<Button>(R.id.view_all)
++
++//        // create the database
++//        var databaseHelper = DatabaseHelper(this)
++        // operations to be performed when user tap on either of the buttons
++        signinButton.setOnClickListener {
++
++            val emailText = findViewById<TextView>(R.id.editTextEmailAddress)
++            val passwordText = findViewById<TextView>(R.id.editTextTextPassword)
++//            // Case 1: Empty field(s)
++//            if (emailText.text.toString() == "" || passwordText.text.toString() == "") {
++//                Toast.makeText(this, "ERROR: Empty field(s)", Toast.LENGTH_LONG).show()
++//            }
++//
++//            // Case 2: Customer already exists
++//            if (databaseHelper.lookupCustomerID(emailText.text.toString()) != -1) {
++//                // Case 2.1: Password matches
++//                var inputtedPass = passwordText.text.toString()
++//                var passOnFile = databaseHelper.lookupCustomerPassword(emailText.text.toString())
++//                if (inputtedPass == passOnFile) { // match!
++//                    Toast.makeText(this, "Welcome!", Toast.LENGTH_LONG).show()
++//                    val intent = Intent(this, MenuActivity::class.java)
++//                    startActivity(intent)
++//                }
++//                // Case 2.2: Password does NOT match
++//                else {
++//                    Toast.makeText(this, "Password does not match. Try again.", Toast.LENGTH_LONG)
++//                        .show()
++//                }
++//            }
++//
++//            // Case 3: Customer does not exist. Add to db
++//            else {
++//                var customer: Customer = Customer(
++//                    -1,
++//                    emailText.text.toString(),
++//                    passwordText.text.toString(),
++//                    ""
++//                )
++//                val success: Boolean = databaseHelper.addOne(customer)
++//                if (success) {
++//                    Toast.makeText(
++//                        this,
++//                        customer.toString() + "successfully added",
++//                        Toast.LENGTH_SHORT
++//                    ).show()
++//                    val intent = Intent(this, MenuActivity::class.java)
++//                    startActivity(intent)
++//                }
++//                Toast.makeText(this, "ERROR! Customer not added", Toast.LENGTH_LONG).show()
++//            }
++
++            var customer : Customer
++
++            try {
++                customer = Customer (
++                    -1,
++                    emailText.text.toString(),
++                    passwordText.text.toString(),
++                )
++
++//                Toast.makeText(this, customer.toString(), Toast.LENGTH_LONG).show()
++            } catch (e: Exception) {
++                Toast.makeText(this, "Error: To sign in, please enter email AND password. Otherwise continue as a guest.", Toast.LENGTH_LONG).show()
++//                customer = Customer(-1, "error", "error", "")
++                customer = Customer(-1, "error", "error")
++            }
++            // ---------------------------------------------------------------------------------------------------------------------
++//            var customer = Customer(-1, emailText.text.toString(), passwordText.text.toString())
++//
++//            if (emailText.text.toString() == "" || passwordText.text.toString() == "") {
++//                // ISSUE: never goes into this statement even if fields are empty. it simply creates a user with "" email/password.
++//                Toast.makeText(this, "Error: To sign in, please enter email AND password. Otherwise continue as a guest.", Toast.LENGTH_LONG).show()
++//            }
++//            Toast.makeText(this, customer.toString(), Toast.LENGTH_LONG).show()
++            // else,
++            //      if email is new:
++            //         store user info in db and proceed
++            //      else (email exists):
++            //          check password
++            //          if it matches, proceed
++            //          else:
++            //              toast (wrong password!)
++            // ---------------------------------------------------------------------------------------------------------------------
++
++            // Create the database and add the customer
++            var databaseHelper = DatabaseHelper(this)
++            databaseHelper.addCustomer(customer)
++            val email = customer.getEmail()
++
++            Toast.makeText(this, "Welcome, $email", Toast.LENGTH_SHORT).show()
++
++            val intent = Intent(this, MenuActivity::class.java)
++            intent.putExtra("customer", customer as Serializable)
++            startActivity(intent)
++        }
++
++        viewAllButton.setOnClickListener {
++
++            val intent = Intent(this, CustomerListActivity::class.java)
++            startActivity(intent)
++////            Toast.makeText(this, everyOrder.toString(), Toast.LENGTH_SHORT).show()
++
++        }
++
++        guestButton.setOnClickListener {
++            // No user info to store in db. Just proceed to next activity.
++            val intent = Intent(this, MenuActivity::class.java)
++            startActivity(intent)
++        }
++
++    }
++
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/mypizzaapp/Customer.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/mypizzaapp/Customer.kt b/app/src/main/java/com/example/mypizzaapp/Customer.kt
+new file mode 100644
+--- /dev/null	(date 1621022207449)
++++ b/app/src/main/java/com/example/mypizzaapp/Customer.kt	(date 1621022207449)
+@@ -0,0 +1,94 @@
++package com.example.mypizzaapp
++
++import android.os.Parcel
++import android.os.Parcelable
++import java.io.Serializable
++
++class Customer(
++    private var id: Int,
++    private var email: String?,
++    private var password: String?,
++    private var order: String? = "",
++    private var base: String? = "",
++    private var protein: String? = "",
++    //private var ingredients: ArrayList<String> = arrayListOf(),
++//    private var extras: ArrayList<String> = arrayListOf(),
++) : Serializable {
++
++//    constructor(parcel: Parcel) : this(
++//        parcel.readInt(),
++//        parcel.readString(),
++//        parcel.readString(),
++//        parcel.readString(),
++//        parcel.readString(),
++//        parcel.readString(),
++//    ) {
++//    }
++
++    // Getters & setters
++    fun getID(): Int {
++        return this.id
++    }
++
++    fun setID(id: Int) {
++        this.id = id
++    }
++
++    fun getEmail(): String? {
++        return this.email
++    }
++
++    fun setEmail(email: String?) {
++        this.email = email
++    }
++
++    fun getPassword(): String? {
++        return this.password
++    }
++
++    fun setPassword(password: String?) {
++        this.password = password
++    }
++
++    fun getOrder() : String? {
++        return this.order
++    }
++
++    fun setOrder(order : String? = "") {
++        this.order = order
++    }
++
++    fun setBase(base: String?) {
++        this.base = base
++    }
++
++    fun getBase() : String? {
++        return this.base
++    }
++
++    fun setProtein(protein: String?) {
++        this.protein = protein
++    }
++
++    fun getProtein() : String? {
++        return this.protein
++    }
++
++//    fun getIngredients() : ArrayList<String> {
++//        return this.ingredients
++//    }
++//
++//    fun setIngredients(ingredients: ArrayList<String>) {
++//        this.ingredients = ingredients
++//    }
++
++    override fun toString(): String {
++        return "Customer(id='$id', email='$email', password='$password', base='$base', protein='$protein')"
++//        return "Customer(id='$id', email='$email', password='$password')"
++
++    }
++
++
++
++}
++
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1617047364587)
++++ b/.idea/misc.xml	(date 1617047364587)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/build/classes" />
++  </component>
++  <component name="ProjectType">
++    <option name="id" value="Android" />
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/java/com/example/mypizzaapp/MenuActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/mypizzaapp/MenuActivity.kt b/app/src/main/java/com/example/mypizzaapp/MenuActivity.kt
+new file mode 100644
+--- /dev/null	(date 1621022312510)
++++ b/app/src/main/java/com/example/mypizzaapp/MenuActivity.kt	(date 1621022312510)
+@@ -0,0 +1,113 @@
++package com.example.mypizzaapp
++
++import android.content.Intent
++import android.database.sqlite.SQLiteDatabase
++import android.os.Bundle
++import android.widget.CheckBox
++import android.widget.RadioButton
++import androidx.appcompat.app.AppCompatActivity
++import kotlinx.android.synthetic.main.activity_menu.*
++import android.widget.Toast
++
++
++class MenuActivity : AppCompatActivity() {
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        setContentView(R.layout.activity_menu)
++
++        val intent = getIntent()
++        val customer = intent.getSerializableExtra("customer") as Customer
++
++//         Initiate all radioButtons:
++            var base1 = findViewById<RadioButton>(R.id.base1)
++            var base2 = findViewById<RadioButton>(R.id.base2)
++            var base3 =findViewById<RadioButton>(R.id.base3)
++            var base4 = findViewById<RadioButton>(R.id.base4)
++            var protein1 = findViewById<RadioButton>(R.id.protein1)
++            var protein2 = findViewById<RadioButton>(R.id.protein2)
++            var protein3 = findViewById<RadioButton>(R.id.protein3)
++            var protein4 = findViewById<RadioButton>(R.id.protein4)
++
++        // Initiate all checkBoxes:
++            var ingredient1 = findViewById(R.id.ingredient1) as CheckBox
++            var ingredient2 = findViewById(R.id.ingredient2) as CheckBox
++            var ingredient3 = findViewById(R.id.ingredient3) as CheckBox
++            var ingredient4 = findViewById(R.id.ingredient4) as CheckBox
++            var ingredient5 = findViewById(R.id.ingredient5) as CheckBox
++            var ingredient6 = findViewById(R.id.ingredient6) as CheckBox
++            var ingredient7 = findViewById(R.id.ingredient7) as CheckBox
++            var ingredient8 = findViewById(R.id.ingredient8) as CheckBox
++            var ingredient9 = findViewById(R.id.ingredient9) as CheckBox
++            var ingredient10 = findViewById(R.id.ingredient10) as CheckBox
++            val extra1 = findViewById<CheckBox>(R.id.extra1)
++            val extra2 = findViewById<CheckBox>(R.id.extra2)
++            val extra3 = findViewById<CheckBox>(R.id.extra3)
++            val extra4 = findViewById<CheckBox>(R.id.extra4)
++            val extra5 = findViewById<CheckBox>(R.id.extra5)
++            val extra6 = findViewById<CheckBox>(R.id.extra6)
++            val extra7 = findViewById<CheckBox>(R.id.extra7)
++            val extra8 = findViewById<CheckBox>(R.id.extra8)
++
++
++        fun numberOfExtras(): Int {
++            var numChecked = 0
++            for (i in 0 until extras.childCount) {
++                val ex = extras.getChildAt(i)
++                if ((ex as CheckBox).isChecked) {
++                    numChecked += 1
++                }
++            }
++            return numChecked
++        }
++
++        fun calculatePrice(): String {
++            val basePrice = 8.00
++            val extrasPrice = 0.25
++            val orderCost = basePrice + (extrasPrice * numberOfExtras())
++            return orderCost.toString()
++        }
++
++        fun baseClicked() {
++            var base: String
++            for (i in 0 until base_menu.childCount) {
++                var current = base_menu.getChildAt(i)
++                if ((current as RadioButton).isChecked) {
++                    base = current.text as String
++                    customer.setBase(base)
++                    break
++                }
++            }
++        }
++
++        fun proteinClicked() {
++            var protein: String
++            for (i in 0 until protein_menu.childCount) {
++                var current = protein_menu.getChildAt(i)
++                if ((current as RadioButton).isChecked) {
++                    protein = current.text as String
++                    customer.setProtein(protein)
++                    break
++                }
++            }
++        }
++
++
++        // operations to be performed when user tap on either of the buttons
++        next_button.setOnClickListener {
++            var databaseHelper = DatabaseHelper(this)
++            baseClicked()
++            proteinClicked()
++            //var toastString = "base: " + customer.getBase() + " protein: " + customer.getProtein()
++            //Toast.makeText(this, toastString, Toast.LENGTH_SHORT)
++
++            
++            databaseHelper.addOrderToDb(customer)
++
++            val intent = Intent(this, CartActivity::class.java)
++
++            intent.putExtra("orderCost", calculatePrice())
++            startActivity(intent)
++        }
++    }
++
++}
+Index: app/src/main/java/com/example/mypizzaapp/DatabaseHelper.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/mypizzaapp/DatabaseHelper.kt b/app/src/main/java/com/example/mypizzaapp/DatabaseHelper.kt
+new file mode 100644
+--- /dev/null	(date 1621024921145)
++++ b/app/src/main/java/com/example/mypizzaapp/DatabaseHelper.kt	(date 1621024921145)
+@@ -0,0 +1,158 @@
++package com.example.mypizzaapp
++
++import android.content.ContentValues
++import android.content.Context
++import android.database.Cursor
++import android.database.sqlite.SQLiteDatabase
++import android.database.sqlite.SQLiteOpenHelper
++
++class DatabaseHelper(
++    context: Context?
++) : SQLiteOpenHelper(context, "customer.db", null, 1) {
++
++    companion object {
++        const val TABLE_NAME = "CUSTOMER_TABLE"
++        const val COLUMN_ID = "ID"
++        const val CUSTOMER_EMAIL = "CUSTOMER_EMAIL"
++        const val CUSTOMER_PASSWORD = "CUSTOMER_PASSWORD"
++        //const val CUSTOMER_ORDER = "CUSTOMER_ORDER"
++        const val CUSTOMER_BASE = "CUSTOMER_BASE"
++        const val CUSTOMER_PROTEIN = "CUSTOMER_PROTEIN"
++    }
++
++    // Called the first time a db is accessed. This code should generate a new table
++    override fun onCreate(db: SQLiteDatabase) {
++        val createTableStatement = "CREATE TABLE ${TABLE_NAME}(${COLUMN_ID} INTEGER PRIMARY KEY AUTOINCREMENT, ${CUSTOMER_EMAIL} TEXT, ${CUSTOMER_PASSWORD} TEXT, ${CUSTOMER_BASE} TEXT, ${CUSTOMER_PROTEIN} TEXT)"
++//        val createTableStatement : String = "CREATE TABLE ${TABLE_NAME}(${COLUMN_ID} INTEGER PRIMARY KEY AUTOINCREMENT, ${CUSTOMER_EMAIL} TEXT, ${CUSTOMER_PASSWORD} TEXT)"
++
++        db.execSQL(createTableStatement)
++    }
++
++    // Called if the db version number changes. Prevents previous users apps from breaking when you change the db design
++    override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
++        //
++        db.execSQL("DROP TABLE $TABLE_NAME")
++        onCreate(db)
++    }
++
++    /* Add customer to the db */
++    fun addCustomer(customer: Customer): Boolean {
++
++        val db : SQLiteDatabase = this.writableDatabase
++        val cv = ContentValues()
++
++        // no need to "put" the ID because it is an autoincrement column in the database
++        cv.put(CUSTOMER_EMAIL, customer.getEmail())
++        cv.put(CUSTOMER_PASSWORD, customer.getPassword())
++//        cv.put(CUSTOMER_ORDER, customer.getOrder())
++
++        val insert = db.insert(TABLE_NAME, null, cv)
++        customer.setID(insert.toInt())
++        db.close()
++        // insert's return type is a long so if insert == -1 --> fail, else, success!
++        return insert != -1L    // false if insert == -1L, true otherwise
++    }
++
++    /* Add order to db */
++    fun addOrderToDb(customer: Customer) {
++        var db : SQLiteDatabase = this.writableDatabase
++        var cv = ContentValues()
++        cv.put(CUSTOMER_BASE, customer.getBase())
++        cv.put(CUSTOMER_PROTEIN, customer.getProtein())
++
++        var id = customer.getID()
++
++        db.update(TABLE_NAME, cv, "${COLUMN_ID} = $id", arrayOf())
++
++        db.close()
++    }
++
++    /* Returns customer ID if it exists. Otherwise return -1 */
++    fun lookupCustomerID (email: String) : Int {
++        // get customers with given email from db using the query string below
++        var queryString : String = "SELECT * FROM $TABLE_NAME WHERE $CUSTOMER_EMAIL LIKE email"
++        var db : SQLiteDatabase = this.readableDatabase // don't need to write to db
++        var cursor : Cursor = db.rawQuery(queryString, null)
++
++        var returnVar = -1
++        if (cursor.count > 0) {
++            returnVar = cursor.getInt(0) // column 0 contains ID
++        }
++        cursor.close()
++        db.close()
++
++        return returnVar
++    }
++
++    fun lookupCustomerOrder(email : String) : String {
++        var queryString = "SELECT * FROM $TABLE_NAME"
++        // get customers with given email from db using the query string below
++//        var queryString = "SELECT * FROM $TABLE_NAME WHERE $CUSTOMER_EMAIL LIKE email"
++        var db : SQLiteDatabase = this.readableDatabase // don't need to write to db
++
++        var cursor : Cursor = db.rawQuery(queryString, null)
++        var customerOrder = ""
++
++        if (cursor.count > 0) { // if true, there is a customer with given email
++            customerOrder = cursor.getString(3)  // third column hold the order
++
++            cursor.close()
++            db.close()
++        }
++
++        return customerOrder
++    }
++
++    fun lookupCustomerPassword(email: String) : String {
++        var queryString = "SELECT * FROM $TABLE_NAME"
++//        var queryString = "SELECT * FROM $TABLE_NAME WHERE $CUSTOMER_EMAIL LIKE email"
++        var db : SQLiteDatabase = this.readableDatabase // don't need to write to db
++
++        var cursor : Cursor = db.rawQuery(queryString, null)
++        var customerPassword = ""
++
++        if (cursor.count > 0) { // if true, there is a customer with given email
++            customerPassword = cursor.getString(2)  // second column holds the password
++
++            cursor.close()
++            db.close()
++        }
++
++        return customerPassword
++    }
++
++    fun getAllCustomers(): List<Customer> {
++        var returnList = ArrayList<Customer>()
++
++        // get data from the database
++
++        var queryString : String = "SELECT * FROM $TABLE_NAME"
++        var db : SQLiteDatabase = this.readableDatabase // cause I'm just selecting so I don't need writable. Writeable creates bottleneck cause wait till update
++
++        var cursor : Cursor = db.rawQuery(queryString, null)
++
++        if (cursor.moveToFirst()) { // if true, there were some result(s)
++            // loop through the cursor (result set) and create a new customer object for each. Put the into the return list.
++            do {
++                var customerID = cursor.getInt(0)
++                var customerEmail = cursor.getString(1)
++                var customerPassword = cursor.getString(2)
++//                var customerOrder = cursor.getString(3)
++
++                var newCustomer: Customer = Customer(customerID, customerEmail, customerPassword)
++                returnList.add(newCustomer)
++            } while (cursor.moveToNext())
++
++        } else {
++            // failure. no results from db. do not add anything
++        }
++
++        // close both cursor and the db when done
++        cursor.close()
++        db.close()
++
++        return returnList
++    }
++
++
++}
+\ No newline at end of file
+Index: app/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/.gitignore b/app/.gitignore
+new file mode 100644
+--- /dev/null	(date 1617047298744)
++++ b/app/.gitignore	(date 1617047298744)
+@@ -0,0 +1,1 @@
++/build
+\ No newline at end of file
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1617047309392)
++++ b/.idea/.gitignore	(date 1617047309392)
+@@ -0,0 +1,3 @@
++# Default ignored files
++/shelf/
++/workspace.xml
+Index: app/proguard-rules.pro
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/proguard-rules.pro b/app/proguard-rules.pro
+new file mode 100644
+--- /dev/null	(date 1617047299034)
++++ b/app/proguard-rules.pro	(date 1617047299034)
+@@ -0,0 +1,21 @@
++# Add project specific ProGuard rules here.
++# You can control the set of applied configuration files using the
++# proguardFiles setting in build.gradle.
++#
++# For more details, see
++#   http://developer.android.com/guide/developing/tools/proguard.html
++
++# If your project uses WebView with JS, uncomment the following
++# and specify the fully qualified class name to the JavaScript interface
++# class:
++#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
++#   public *;
++#}
++
++# Uncomment this to preserve the line number information for
++# debugging stack traces.
++#-keepattributes SourceFile,LineNumberTable
++
++# If you keep the line number information, uncomment this to
++# hide the original source file name.
++#-renamesourcefileattribute SourceFile
+\ No newline at end of file
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+new file mode 100644
+--- /dev/null	(date 1617047364602)
++++ b/.idea/compiler.xml	(date 1617047364602)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="CompilerConfiguration">
++    <bytecodeTargetLevel target="11" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/.name
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.name b/.idea/.name
+new file mode 100644
+--- /dev/null	(date 1617047304334)
++++ b/.idea/.name	(date 1617047304334)
+@@ -0,0 +1,1 @@
++My Pizza App
+\ No newline at end of file
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+new file mode 100644
+--- /dev/null	(date 1629660343391)
++++ b/.idea/gradle.xml	(date 1629660343391)
+@@ -0,0 +1,20 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="GradleMigrationSettings" migrationVersion="1" />
++  <component name="GradleSettings">
++    <option name="linkedExternalProjectsSettings">
++      <GradleProjectSettings>
++        <option name="testRunner" value="GRADLE" />
++        <option name="distributionType" value="DEFAULT_WRAPPED" />
++        <option name="externalProjectPath" value="$PROJECT_DIR$" />
++        <option name="modules">
++          <set>
++            <option value="$PROJECT_DIR$" />
++            <option value="$PROJECT_DIR$/app" />
++          </set>
++        </option>
++        <option name="resolveModulePerSourceSet" value="false" />
++      </GradleProjectSettings>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/jarRepositories.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/jarRepositories.xml b/.idea/jarRepositories.xml
+new file mode 100644
+--- /dev/null	(date 1617047421341)
++++ b/.idea/jarRepositories.xml	(date 1617047421341)
+@@ -0,0 +1,25 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="RemoteRepositoriesConfiguration">
++    <remote-repository>
++      <option name="id" value="central" />
++      <option name="name" value="Maven Central repository" />
++      <option name="url" value="https://repo1.maven.org/maven2" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="jboss.community" />
++      <option name="name" value="JBoss Community repository" />
++      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="BintrayJCenter" />
++      <option name="name" value="BintrayJCenter" />
++      <option name="url" value="https://jcenter.bintray.com/" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="Google" />
++      <option name="name" value="Google" />
++      <option name="url" value="https://dl.google.com/dl/android/maven2/" />
++    </remote-repository>
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/res/values/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/themes.xml b/app/src/main/res/values/themes.xml
+new file mode 100644
+--- /dev/null	(date 1617047302564)
++++ b/app/src/main/res/values/themes.xml	(date 1617047302564)
+@@ -0,0 +1,16 @@
++<resources xmlns:tools="http://schemas.android.com/tools">
++    <!-- Base application theme. -->
++    <style name="Theme.MyPizzaApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
++        <!-- Primary brand color. -->
++        <item name="colorPrimary">@color/purple_500</item>
++        <item name="colorPrimaryVariant">@color/purple_700</item>
++        <item name="colorOnPrimary">@color/white</item>
++        <!-- Secondary brand color. -->
++        <item name="colorSecondary">@color/teal_200</item>
++        <item name="colorSecondaryVariant">@color/teal_700</item>
++        <item name="colorOnSecondary">@color/black</item>
++        <!-- Status bar color. -->
++        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
++        <!-- Customize your theme here. -->
++    </style>
++</resources>
+\ No newline at end of file
+Index: app/src/main/java/com/example/mypizzaapp/CartActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/mypizzaapp/CartActivity.kt b/app/src/main/java/com/example/mypizzaapp/CartActivity.kt
+new file mode 100644
+--- /dev/null	(date 1620156914189)
++++ b/app/src/main/java/com/example/mypizzaapp/CartActivity.kt	(date 1620156914189)
+@@ -0,0 +1,20 @@
++package com.example.mypizzaapp
++
++import androidx.appcompat.app.AppCompatActivity
++import android.os.Bundle
++import android.widget.EditText
++
++class CartActivity : AppCompatActivity() {
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        setContentView(R.layout.activity_cart)
++
++        val costField = findViewById(R.id.costField) as EditText
++
++        val intent = getIntent()
++        val cost = intent.getStringExtra("orderCost")
++        costField.setText("$ " + cost)
++
++
++    }
++}
+\ No newline at end of file
+Index: gradle/wrapper/gradle-wrapper.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/gradle/wrapper/gradle-wrapper.properties b/gradle/wrapper/gradle-wrapper.properties
+new file mode 100644
+--- /dev/null	(date 1629660960223)
++++ b/gradle/wrapper/gradle-wrapper.properties	(date 1629660960223)
+@@ -0,0 +1,6 @@
++#Mon Mar 29 15:48:23 EDT 2021
++distributionBase=GRADLE_USER_HOME
++distributionUrl=https\://services.gradle.org/distributions/gradle-7.0.2-bin.zip
++distributionPath=wrapper/dists
++zipStorePath=wrapper/dists
++zipStoreBase=GRADLE_USER_HOME
+Index: app/src/main/res/drawable/ic_launcher_background.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_launcher_background.xml b/app/src/main/res/drawable/ic_launcher_background.xml
+new file mode 100644
+--- /dev/null	(date 1617047302295)
++++ b/app/src/main/res/drawable/ic_launcher_background.xml	(date 1617047302295)
+@@ -0,0 +1,170 @@
++<?xml version="1.0" encoding="utf-8"?>
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="108dp"
++    android:height="108dp"
++    android:viewportWidth="108"
++    android:viewportHeight="108">
++    <path
++        android:fillColor="#3DDC84"
++        android:pathData="M0,0h108v108h-108z" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M9,0L9,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,0L19,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M29,0L29,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M39,0L39,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M49,0L49,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M59,0L59,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M69,0L69,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M79,0L79,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M89,0L89,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M99,0L99,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,9L108,9"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,19L108,19"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,29L108,29"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,39L108,39"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,49L108,49"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,59L108,59"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,69L108,69"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,79L108,79"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,89L108,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,99L108,99"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,29L89,29"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,39L89,39"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,49L89,49"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,59L89,59"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,69L89,69"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,79L89,79"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M29,19L29,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M39,19L39,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M49,19L49,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M59,19L59,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M69,19L69,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M79,19L79,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++</vector>
+Index: settings.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/settings.gradle b/settings.gradle
+new file mode 100644
+--- /dev/null	(date 1617047299999)
++++ b/settings.gradle	(date 1617047299999)
+@@ -0,0 +1,2 @@
++rootProject.name = "My Pizza App"
++include ':app'
+Index: app/src/main/res/drawable-v24/ic_launcher_foreground.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable-v24/ic_launcher_foreground.xml b/app/src/main/res/drawable-v24/ic_launcher_foreground.xml
+new file mode 100644
+--- /dev/null	(date 1617047302398)
++++ b/app/src/main/res/drawable-v24/ic_launcher_foreground.xml	(date 1617047302398)
+@@ -0,0 +1,30 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:aapt="http://schemas.android.com/aapt"
++    android:width="108dp"
++    android:height="108dp"
++    android:viewportWidth="108"
++    android:viewportHeight="108">
++    <path android:pathData="M31,63.928c0,0 6.4,-11 12.1,-13.1c7.2,-2.6 26,-1.4 26,-1.4l38.1,38.1L107,108.928l-32,-1L31,63.928z">
++        <aapt:attr name="android:fillColor">
++            <gradient
++                android:endX="85.84757"
++                android:endY="92.4963"
++                android:startX="42.9492"
++                android:startY="49.59793"
++                android:type="linear">
++                <item
++                    android:color="#44000000"
++                    android:offset="0.0" />
++                <item
++                    android:color="#00000000"
++                    android:offset="1.0" />
++            </gradient>
++        </aapt:attr>
++    </path>
++    <path
++        android:fillColor="#FFFFFF"
++        android:fillType="nonZero"
++        android:pathData="M65.3,45.828l3.8,-6.6c0.2,-0.4 0.1,-0.9 -0.3,-1.1c-0.4,-0.2 -0.9,-0.1 -1.1,0.3l-3.9,6.7c-6.3,-2.8 -13.4,-2.8 -19.7,0l-3.9,-6.7c-0.2,-0.4 -0.7,-0.5 -1.1,-0.3C38.8,38.328 38.7,38.828 38.9,39.228l3.8,6.6C36.2,49.428 31.7,56.028 31,63.928h46C76.3,56.028 71.8,49.428 65.3,45.828zM43.4,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2c-0.3,-0.7 -0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C45.3,56.528 44.5,57.328 43.4,57.328L43.4,57.328zM64.6,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2s-0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C66.5,56.528 65.6,57.328 64.6,57.328L64.6,57.328z"
++        android:strokeWidth="1"
++        android:strokeColor="#00000000" />
++</vector>
+\ No newline at end of file
